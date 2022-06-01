@@ -1,6 +1,9 @@
 Classroom: 
 https://classroom.google.com/c/NTEwNDkzMTg0NjU3?cjc=ooyihxy
 
+```
+apt install goloang-go
+```
 ## Week 4
 
 imports

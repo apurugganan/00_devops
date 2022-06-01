@@ -10,3 +10,6 @@ classrooms
 2. Cloud classroom: https://classroom.google.com/c/NTEwNDkzMzU3MDcx?cjc=mwqh2l4
 3. Linux classroom: https://classroom.google.com/c/NDg1ODc2MDc2NDM2?cjc=frernt7
 
+Git resources:
+1. ohshitgit.com
+
