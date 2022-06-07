@@ -190,7 +190,7 @@ sudo systemctl start nginx
 sudo systemctl status nginx
 ```
 
-Side Note
+SIDENOTE
 ```
 vim /etc/nginx/nginx.conf
 vim /usr/share/nginx/html
@@ -222,3 +222,59 @@ sudo su -
 ## Add EBS to EC2 instance
 1. Must be in the same availability zone
 2. Go to volumes
+3. Create volume 
+4. enter size
+5. availability zone must match 
+6. create volume
+7. go to actions and attach volume
+8. select instances
+
+checkmemory
+```
+df -h
+```
+
+check drives
+```
+lsblk
+```
+
+## Format and mount volume
+reference: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html
+
+1. check drive if there is a filesystem on drive
+```
+sudo file -s /dev.xvdf
+
+// no file system result
+/dev/xvdf: data
+```
+
+2. Make a file system
+```
+sudo mkfs -t xfs /dev/xvdf
+
+// check
+sudo file -s /dev/xvdf
+/dev/xvdf: SGI XFS filesystem data (blksz 4096, inosz 512, v2 dirs)
+```
+
+3. Create data directory
+```
+mkdir /data
+```
+
+4. Mount drive
+```
+sudo mount  /dev/xvdf /data
+df -h
+
+testfiledownload
+
+// test 
+cd /data
+wget https://speed.hetzner.de/1GB.bin
+umount /data
+```
+
+Next Make volume permanent persistent
