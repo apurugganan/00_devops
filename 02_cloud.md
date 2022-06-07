@@ -218,3 +218,7 @@ sudo systemctl restart nginx
 ```
 sudo su -
 ```
+
+## Add EBS to EC2 instance
+1. Must be in the same availability zone
+2. Go to volumes
