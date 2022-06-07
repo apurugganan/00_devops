@@ -161,3 +161,60 @@ users:
 ssh -i newKey.pem user@newIpAddress
 ```
 
+## Install Web server
+1. Launch instance
+2. Select OS
+3. Select Key Pair
+4. On Network Settings select Allow http/https
+Firewall configuration
+- port 443 - https
+5. Get Ip address
+6. Log in via SSH
+7. On terminal:
+resource: https://www.linuxshelltips.com/install-nginx-in-linux/
+```
+sudo yum update
+sudo apt update
+
+// tell package manager to look another place to look for packages
+sudo amazon-linux-extras install epel
+
+// do update again
+sudo yum update
+
+// install nginx / apache etc
+sudo yum install nginx
+
+// start server
+sudo systemctl start nginx
+sudo systemctl status nginx
+```
+
+Side Note
+```
+vim /etc/nginx/nginx.conf
+vim /usr/share/nginx/html
+
+sudo !! // last command with sudo
+sudo vim /usr/share/nginx/html
+
+download file : https://classroom.google.com/c/NTEwNDkzMzU3MDcx/m/NTMxNzczODk4NDg0/details
+
+sudo mkdir -p /var/www/html
+sudo wget https://www.quackit.com/html/templates/download/bootstrap/business-2.zip 
+sudo unzip business-2.zip
+ls -l business-2/
+
+nano /etc/nginx/nginx.conf // edit root path of business-2
+```
+
+restart service
+```
+sudo systemctl restart nginx
+```
+
+
+## Run as root user all the time
+```
+sudo su -
+```
