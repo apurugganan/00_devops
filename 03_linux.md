@@ -113,3 +113,51 @@ cd neovim/
 // build
 make
 ```
+
+## June 03, 2022
+## 5 of 7: Managing Linux
+
+Manage processes
+```
+//snapshot of processes
+ps 
+
+  PID TTY          TIME CMD
+78066 pts/0    00:00:00 bash
+78123 pts/0    00:00:00 ps
+
+ps -e
+ps -ef
+ps a
+ps auwx
+
+ps -ef | grep -i python
+```
+
+top : view processin real time 
+https://www.journaldev.com/43930/process-management-in-linux
+```
+top
+
+uptime
+```
+
+SIDENOTE:
+- load average;
+- scales for systems loads;
+- amount of process and number of cores
+- 24 cores 24 load average
+- trend data
+1-5     5-10    10
+0.00    0.00    0.00
+
+PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                    
+                                                                    
+ 2 root      20   0       0      0      0 S   0.0   0.0   0:00.04 kthreadd                                                                   
+ 3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp                                                                     
+13 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/0                                                              
+14 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0  
+
+- PR priority; lower number highrt priority
+- NI change priority
+
