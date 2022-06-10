@@ -135,6 +135,7 @@ ps -ef | grep -i python
 ```
 
 top : view processin real time 
+what status mean: 
 https://www.journaldev.com/43930/process-management-in-linux
 ```
 top
@@ -146,18 +147,143 @@ SIDENOTE:
 - load average;
 - scales for systems loads;
 - amount of process and number of cores
-- 24 cores 24 load average
-- trend data
+- 24 cores 24 load average; max utilization
+- trend data (mins)
+```
 1-5     5-10    10
 0.00    0.00    0.00
+```
 
+
+```
 PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                    
                                                                     
  2 root      20   0       0      0      0 S   0.0   0.0   0:00.04 kthreadd                                                                   
  3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp                                                                     
 13 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/0                                                              
 14 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0  
-
+```
 - PR priority; lower number highrt priority
-- NI change priority
+- NI change priority/ Nice values
+to kill a PID
+```
+k
+provide pid number
+```
 
+htop - more helpful than top; easier to read
+
+
+Sigterm: https://www.gnu.org/software/libc/manual/html_node/Termination-Signals.html
+sigterm - shutdown gracefully
+
+kill - stop a process
+```
+sudo apt install nginx
+systemctl status nginx
+ps auwx | grep nginx
+
+kill <processid>
+systemctl start nginx
+
+
+kill -9  <pid> // kills all process in the group
+```
+
+free : checks memory in bytes
+```
+free
+
+free -m
+free -g
+free -h
+
+              total        used        free      shared  buff/cache   available
+Mem:          1.9Gi       117Mi       376Mi       0.0Ki       1.5Gi       1.6Gi
+Swap:         511Mi       1.0Mi       510Mi
+```
+
+swap - offloading from ram to disk space
+
+```
+df // file system information
+du // disk usage; how much space is this folder taking up
+```
+
+Linux System Start up
+run levels : modes it runs on
+| Level | Mode |
+| --- | --- |
+| 0 | halt - shutdown |
+| 1 | single user mode (God mode) physical access |
+| 2 | multi user mode (safe mode) physical access |
+| 3 | multi network w/ networking (normal boot; cmd only) |
+| 4 | Undefined |
+| 5 | X11 (desktop linux) |
+| 6 | Reboot  |
+
+```
+runlevel
+
+who -r
+
+systemctl get-default
+w
+```
+
+change level
+```
+init <runlevel>
+
+init 0
+init 1
+
+reboot now
+```
+
+Permanent Runlevel Change
+```
+systemctl set-default <graphical.target>
+systemctl set-default reboot.target //dont do this 0 and 6
+```
+
+See what's loaded
+```
+systemctl list-units
+```
+
+start at boot 
+```
+systemctl enable <service-name>
+```
+
+Manage processes
+```
+systemctl start nginx
+systemctl stop nginx
+systemctl restart nginx
+```
+
+system nginx status
+```
+ip addr
+```
+
+### CRON
+- run more than once; schedule when to run
+cron.daily
+cron.monthly
+cron.weekly
+
+Cron expression
+Resource: crontab.guru
+/etc/crontab
+```
+vim /etc/crontab
+
+* * * * *   root touch ~/`date +%s`.txt
+
+
+watch date
+cat /var/log/cron
+```
