@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	name := "bob"
@@ -12,5 +15,6 @@ func main() {
 	fmt.Println(capture[0])         // prints 115; ascii value
 	fmt.Println(string(capture[0])) // prints s; string converts ascii
 	fmt.Println("hello"[1])         // prints 101
+	fmt.Println(strings.ToUpper("hello"))
 
 }
