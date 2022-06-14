@@ -22,3 +22,10 @@ Int8 - 8bits
 Int16 - 16bits
 Int32 - 32bits
 Int64 - 64bits
+
+# Week 5
+Strings 
+- series of characters
+
+Strings.Split()
+creates and array
