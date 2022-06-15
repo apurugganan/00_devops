@@ -96,8 +96,8 @@ sudo yum update
 sudo amazon-linux-extras install nginx1
 sudo service nginx start
 ```
-
-## Create EC2 (check camp cloud 4 of 7)
+## Session 04
+## Create EC2 
 EC2 > Instance > Launch Instance
 1. Add Name
 2. Select OS
@@ -278,3 +278,46 @@ umount /data
 ```
 
 Next Make volume permanent persistent
+
+
+## Session 05
+Load balancing, Scability and Elasticity
+
+Load Balancing
+- spread requests to multiple computers
+
+LB Algorithms
+1. Round Robin x
+2. Weighted RR; different server sizes/ latency
+3. Least Connection; 
+4. Weighted Least Connection
+5. Source IP Hash; 
+- caches the ip of user and LB will keep sending it to the same server; not forever, timeouts
+
+Server Pools / target groups (aws)
+- collection of origin servers for LB to send requests
+- add or remove servers
+
+Health Checks
+- attempts to open a TCP connection to the insrance on a specified port 
+- failure to connect with timeout is considered unhelthy
+- unhelthy hosts will be removed from server pool
+
+Demo
+Resource: http://nginx.org/en/docs/http/load_balancing.html
+
+## Scaling
+- increasing capacity to meet increasing workload
+
+Elasticity
+-increasing or reducing the capacity to meet increasing or decreasing workload
+
+Vertical scaling/ scaling up; increasing the resources; same number of server
+
+horizontal scaling/ scaling out;add same sized resources; adding server to the pool 
+
+## AWS Auto Scaling 
+monitors apps and automatically adjusts capacity to maintain steady at lowest cost possible
+
+Launch Configuration 
+- an instance configuration template that an auto scaling group uses to launch EC2 instances
