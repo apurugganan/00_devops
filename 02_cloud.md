@@ -321,3 +321,16 @@ monitors apps and automatically adjusts capacity to maintain steady at lowest co
 
 Launch Configuration 
 - an instance configuration template that an auto scaling group uses to launch EC2 instances
+
+
+## Auto Scaling Group
+- contains collection of EC2 instances that are treated as logical grouping for purposes of automatic scaling and management
+- rules when to scale 
+
+## Dynamic Scaling - Target Tracking
+- CPU utilization
+- Network In/out
+- ALB Requests
+- Customization cloud watch 
+
+2:15:00
