@@ -287,3 +287,63 @@ vim /etc/crontab
 watch date
 cat /var/log/cron
 ```
+
+## 6 of 7 : Basic Networking 
+
+Internet 
+- a netword of interconnected computers 
+- wires
+
+TCP/IP
+- is a suite of protocols (set of rules) that allow computers to communicate over a network
+
+IP - Internet Protocol 
+- the part that obtains the address that data will be sent to.
+- 192.168.1.1
+
+TCP - Transmission Control Protocol 
+- delivers the data to the IP address. 
+- the process that happens when you receice data
+
+Network Interfaces
+- ifconfig utility; allow to get/change information about interfaces available
+- multiple interfaces (wifi, cable)
+
+```
+ip addr
+ifconfig
+
+// interface where system can talk to itself
+// 127.0.0.1 - my ip address 
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+
+
+// wired connection -  139.xxx.xxx.xxx (1st one)
+
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether f2:3c:93:ac:5e:d0 brd ff:ff:ff:ff:ff:ff
+    inet 139.xxx.xxx.xxx/24 brd 139.xxx.xxx.xxx scope global eth0
+```
+
+setting interfaces up or down 
+```
+ip link ser eth0 up
+ip link ser eth0 down
+```
+
+
+See the path that a request takes throughtout network
+resource: redhat 7 great network commands
+```
+mtr <url>
+mtr -4 <url>
+traceroute
+```
+Packet loss - where is it going
+packet - how data is transferred
