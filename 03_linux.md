@@ -337,7 +337,7 @@ ip link ser eth0 up
 ip link ser eth0 down
 ```
 
-
+## Traceroute
 See the path that a request takes throughtout network
 resource: redhat 7 great network commands
 ```
@@ -347,3 +347,47 @@ traceroute
 ```
 Packet loss - where is it going
 packet - how data is transferred
+
+## DNS Domain Name System
+- mapped to ip address
+- translate address
+Going to websites
+1. Local DBS - Cache
+2. Recursive name server - cache websites; gives ip add
+3. Authoritative Name Server - tell internet where to find information; DNS record => goes to RNS
+
+## Record
+host record - google.com => 8.8.8.8; IPV4
+AAAA record - google.com => fe80::1ff:fe23:4567:890a; IPV6
+CNAME record; canonical name - google.com => public.02.fun.com; domain name aliases
+MX records Mail exchange - google.com => aspmx.l.google.com 
+NS Records; Name Server - google.com => nsl.google.com; sets server respnsible for providing dns information 
+
+```
+dig <url>
+dig mx <url>
+
+ip address 
+- not all sites will allow this way to access 
+- maybe usable for single server
+```
+
+## /etc/hosts
+- manual set a dns override; local mapping
+
+## Connectins and Sockets
+gather information about about ports and sockets a computer is using 
+```
+lsat
+netstat -tulpn
+lsof -i -P// see listening ports 
+
+cat /etc/services
+```
+
+## 7 of 7:  Bash Scripting 
+
+## Scripting 
+- writing code to automate a task
+- often interpreted (line by line); best for scripting
+ 
