@@ -390,4 +390,28 @@ cat /etc/services
 ## Scripting 
 - writing code to automate a task
 - often interpreted (line by line); best for scripting
- 
+
+``` 
+#!/bin/bash // tell which interpreter which to use; first line of code
+
+if - else if - else
+
+&&
+||
+!
+```
+
+Exit Codes
+- linux process return an exit code when they are finished; 
+- status of the run
+```
+0 - Success
+1 - General unkown error
+2 - Misuse of shell command
+
+126 - Shell cant execute
+127 - command not found
+128 - invalid exit argument
+128+x - fatal error with Linux signal x
+130 - command terminated with ctrl + c
+255 exit status out of range
