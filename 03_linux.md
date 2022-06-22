@@ -415,3 +415,26 @@ Exit Codes
 128+x - fatal error with Linux signal x
 130 - command terminated with ctrl + c
 255 exit status out of range
+```
+```
+chmod 744 filname.sh
+chmod +x filename.sh // gives x privileges to all users
+
+dpkg -l // list of installed programs
+
+:q! force quit vim
+
+shift z z => save and quit in vim
+
+apt remove program --purge // removes all related files
+
+vim
+shift g  goes to bottom
+o - write below
+
+sleep 3
+
+apt install nginx && systemctl start nginx
+apt install nginx ; systemctl start nginx
+
+```
